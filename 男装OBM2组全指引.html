@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>男装OBM2组全指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 60px 20px 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        .hero-decoration {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #e94560, #0f3460);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 30px 16px 60px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 36px;
+            padding: 16px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-bar a {
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #555;
+            background: #f5f5f5;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-bar a:hover {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        /* Card */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 22px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateX(2px);
+        }
+
+        .card-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .card-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+        }
+
+        .card-body {
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            padding: 5px 14px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            text-decoration: none;
+        }
+
+        /* Step card */
+        .step-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 22px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateX(2px);
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .step-body {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .step-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            padding: 5px 14px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-top: 12px;
+        }
+
+        .warning-box .step-title {
+            color: #e65100;
+        }
+
+        .warning-icon {
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+
+        /* Buyer grid */
+        .buyer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 14px;
+        }
+
+        .buyer-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .buyer-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .buyer-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .buyer-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        .buyer-link {
+            font-size: 0.82rem;
+            text-decoration: none;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .buyer-no-link {
+            font-size: 0.82rem;
+            color: #aaa;
+        }
+
+        /* Color themes */
+        .bg-blue { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .bg-green { background: linear-gradient(135deg, #11998e, #38ef7d); }
+        .bg-orange { background: linear-gradient(135deg, #f12711, #f5af19); }
+        .bg-purple { background: linear-gradient(135deg, #8E2DE2, #4A00E0); }
+        .bg-teal { background: linear-gradient(135deg, #00b09b, #96c93d); }
+        .bg-pink { background: linear-gradient(135deg, #e94057, #f27121); }
+        .bg-indigo { background: linear-gradient(135deg, #3a47d5, #00d2ff); }
+        .bg-cyan { background: linear-gradient(135deg, #08AEEA, #2AF598); }
+
+        .text-blue { color: #667eea; }
+        .text-green { color: #11998e; }
+        .text-orange { color: #f12711; }
+        .text-purple { color: #8E2DE2; }
+        .text-teal { color: #00b09b; }
+        .text-pink { color: #e94057; }
+        .text-indigo { color: #3a47d5; }
+        .text-cyan { color: #08AEEA; }
+
+        .link-blue { background: #f0f0ff; color: #667eea; }
+        .link-blue:hover { background: #667eea; color: #fff; }
+        .link-green { background: #e8fff8; color: #11998e; }
+        .link-green:hover { background: #11998e; color: #fff; }
+        .link-orange { background: #fff5f0; color: #f12711; }
+        .link-orange:hover { background: #f12711; color: #fff; }
+        .link-purple { background: #f8f0ff; color: #8E2DE2; }
+        .link-purple:hover { background: #8E2DE2; color: #fff; }
+        .link-teal { background: #e8fffa; color: #00b09b; }
+        .link-teal:hover { background: #00b09b; color: #fff; }
+        .link-pink { background: #fff0f3; color: #e94057; }
+        .link-pink:hover { background: #e94057; color: #fff; }
+        .link-indigo { background: #eef0ff; color: #3a47d5; }
+        .link-indigo:hover { background: #3a47d5; color: #fff; }
+        .link-cyan { background: #e8fdff; color: #08AEEA; }
+        .link-cyan:hover { background: #08AEEA; color: #fff; }
+
+        .card-border-blue { border-left-color: #667eea; }
+        .card-border-green { border-left-color: #11998e; }
+        .card-border-orange { border-left-color: #f12711; }
+        .card-border-purple { border-left-color: #8E2DE2; }
+        .card-border-teal { border-left-color: #00b09b; }
+        .card-border-pink { border-left-color: #e94057; }
+
+        /* Notice text */
+        .notice-text {
+            font-size: 0.85rem;
+            color: #e65100;
+            background: #fff8e1;
+            padding: 8px 14px;
+            border-radius: 6px;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            padding: 5px 14px;
+            border-radius: 6px;
+            background: #ffe0b2;
+            color: #e65100;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-link:hover {
+            background: #e65100;
+            color: #fff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.5rem; }
+            .section-title { font-size: 1.15rem; }
+            .buyer-grid { grid-template-columns: repeat(2, 1fr); }
+            .nav-bar { position: static; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>男装OBM2组全指引</h1>
+    <p>后台操作 · 备货履约 · 日常问题处理 · 对接买手</p>
+    <div class="hero-decoration"></div>
+</div>
+
+<div class="container">
+
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <a href="#section-backend">后台操作</a>
+        <a href="#section-stock">备货履约</a>
+        <a href="#section-tutorial">常用商家教程</a>
+        <a href="#section-faq">常见问题处理</a>
+        <a href="#section-buyer">对接买手</a>
+    </div>
+
+    <!-- ===================== 后台操作 ===================== -->
+    <div class="section" id="section-backend">
+        <div class="section-header">
+            <div class="section-icon bg-blue">📋</div>
+            <div class="section-title">后台操作（上新全流程指引）</div>
+        </div>
+        <div class="card-list">
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">1</span>
+                    <div class="card-body">
+                        <div class="card-title">OBM 免审店铺发货包装袋贴标指引</div>
+                        <div class="card-desc">转码（衣服标签尺码和系统一致就不需要转码）；洗唛（本身洗唛没有英文或没有洗唛需要做）</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=73741937453" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看指引</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">2</span>
+                    <div class="card-body">
+                        <div class="card-title">TEMU欧美尺码参考表</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74776139263" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看参考表</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">3</span>
+                    <div class="card-body">
+                        <div class="card-title">TEMU亚洲尺码参考表</div>
+                        <div class="notice-text">⚠️ 注意：插肩款无需填写肩宽，尺码表肩宽勾选去掉</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=73743216305" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看参考表</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">4</span>
+                    <div class="card-body">
+                        <div class="card-title">OBM 免审店铺商家发布商品须知</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74778990469" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看须知</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">5</span>
+                    <div class="card-body">
+                        <div class="card-title">多件装商品链接组合与系统配置</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74785196813" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看配置指引</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">6</span>
+                    <div class="card-body">
+                        <div class="card-title">OBM 免审店铺核价指引</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74781429465" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看核价指引</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">7</span>
+                    <div class="card-body">
+                        <div class="card-title">商家后台基础操作须知</div>
+                        <div class="card-desc">如何修改图片、如何修改商品属性等</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74769673627" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看操作须知</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">8</span>
+                    <div class="card-body">
+                        <div class="card-title">卖家复色操作流程及注意事项</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74770242748" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看复色流程</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-blue">
+                <div class="card-content">
+                    <span class="card-num bg-blue">9</span>
+                    <div class="card-body">
+                        <div class="card-title">面料克重及重量测量规范</div>
+                        <a href="https://agentseller.temu.com/main/course/detail?courseId=26961405154" target="_blank" rel="noopener" class="card-link link-blue">🔗 查看测量规范</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===================== 备货履约 ===================== -->
+    <div class="section" id="section-stock">
+        <div class="section-header">
+            <div class="section-icon bg-green">📦</div>
+            <div class="section-title">备货履约</div>
+        </div>
+        <div class="card-list">
+
+            <div class="step-card">
+                <span class="step-badge bg-green">1</span>
+                <div class="step-body">
+                    <div class="step-title">第一步：系统发起备货教程</div>
+                    <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74788156039" target="_blank" rel="noopener" class="step-link link-green">🔗 查看教程</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-badge bg-green">2</span>
+                <div class="step-body">
+                    <div class="step-title">第二步：做好商品出海的英文说明</div>
+                    <div class="step-desc">英文洗唛 / 包装袋 / 打标逻辑 — 首单/返单发货重点提示：洗唛/吊牌/包装袋/打印标签/打包要求</div>
+                    <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=73748011267" target="_blank" rel="noopener" class="step-link link-green">🔗 查看说明</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-badge bg-green">3</span>
+                <div class="step-body">
+                    <div class="step-title">第三步：打印商品实物标签</div>
+                    <div class="step-desc">入库质检合规标签图标，点击图片可下载</div>
+                    <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=73748536463" target="_blank" rel="noopener" class="step-link link-green">🔗 查看标签</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-badge bg-green">4</span>
+                <div class="step-body">
+                    <div class="step-title">第四步：测量衣服尺寸与体积重量测量</div>
+                    <div class="step-desc">否则质检不过 — 入仓质检允许差异空间</div>
+                    <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74789387335" target="_blank" rel="noopener" class="step-link link-green">🔗 查看差异标准</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <span class="step-badge bg-green">5</span>
+                <div class="step-body">
+                    <div class="step-title">第五步：检查商品并打包发货</div>
+                    <div class="step-desc">检查商品无脏污/破损/断针/系统尺码表/颜色成分尺码等属性系统与洗唛匹配，按照说明进行打包发货 — 箱唛、商品条码粘贴规范指引</div>
+                    <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74780961171" target="_blank" rel="noopener" class="step-link link-green">🔗 查看粘贴规范</a>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="step-card" style="box-shadow:none;padding:0;">
+                    <span class="step-badge bg-orange">6</span>
+                    <div class="step-body">
+                        <div class="step-title"><span class="warning-icon">⚠️</span>重点注意！！！</div>
+                        <div class="step-desc">收到备货单质检不过：先看备货单说明，系统信息填写错误抓紧修改，信息更新后发出wb单号群里艾特跟单同学申请拦截。尽量在第四步做好检查，拦截不一定成功！！！</div>
+                        <div class="step-desc" style="margin-top:6px;">其余常见入仓延迟及拒收问题：</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=73746135230" target="_blank" rel="noopener" class="step-link link-orange">🔗 查看常见问题</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="background:#e8f5e9;border-color:#4caf50;">
+                <div class="step-card" style="box-shadow:none;padding:0;">
+                    <span class="step-badge bg-green">7</span>
+                    <div class="step-body">
+                        <div class="step-title"><span class="warning-icon">📌</span>重点注意：商家如何查看热销款需补货的商品</div>
+                        <div class="step-desc">查看做货量和下单量，不要纯纯依赖系统退单。系统没推单的话自己下备货单，或者填写下方手工单链接：</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=73752255199" target="_blank" rel="noopener" class="step-link link-green">🔗 手工单链接</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===================== 常用商家教程 ===================== -->
+    <div class="section" id="section-tutorial">
+        <div class="section-header">
+            <div class="section-icon bg-purple">📚</div>
+            <div class="section-title">常用商家教程 — 流程 / 售后 / 合规</div>
+        </div>
+        <div class="card-list">
+
+            <div class="card card-border-purple">
+                <div class="card-content">
+                    <span class="card-num bg-purple">1</span>
+                    <div class="card-body">
+                        <div class="card-title">TEMU流程及入门问题解答</div>
+                        <div class="card-desc">最后一个part是关于各种资质提交说明，系统设置合规资质可以参考下</div>
+                        <a href="https://img.cdnfe.com/product-file-public/1f66680720/46a7a0b1fd0790f55dd324d5a568e07a.pdf" target="_blank" rel="noopener" class="pdf-link">📄 查看PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-purple">
+                <div class="card-content">
+                    <span class="card-num bg-purple">2</span>
+                    <div class="card-body">
+                        <div class="card-title">商家必要合规要求（所有）</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=74789987846" target="_blank" rel="noopener" class="card-link link-purple">🔗 查看合规要求</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-purple">
+                <div class="card-content">
+                    <span class="card-num bg-purple">3</span>
+                    <div class="card-body">
+                        <div class="card-title">标码男装常见合规资质说明</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=73753286876" target="_blank" rel="noopener" class="card-link link-purple">🔗 查看资质说明</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===================== 常见问题处理 ===================== -->
+    <div class="section" id="section-faq">
+        <div class="section-header">
+            <div class="section-icon bg-pink">🛠️</div>
+            <div class="section-title">常见问题处理</div>
+        </div>
+        <div style="background:#fff3e0;border-radius:10px;padding:14px 20px;margin-bottom:16px;font-size:0.88rem;color:#e65100;">
+            💡 <strong>说明：</strong>老板常见问题反馈到①-③中，我们统一处理，方便追踪；其余问题参考④反馈到商家后台，时效更快~
+        </div>
+        <div class="card-list">
+
+            <div class="card card-border-pink">
+                <div class="card-content">
+                    <span class="card-num bg-pink">①</span>
+                    <div class="card-body">
+                        <div class="card-title">SKC 价格申诉</div>
+                        <div class="card-desc">白牌价格申诉请填写该问卷，工作日清，写清楚理由</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=25659491793" target="_blank" rel="noopener" class="card-link link-pink">🔗 填写问卷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-pink">
+                <div class="card-content">
+                    <span class="card-num bg-pink">②</span>
+                    <div class="card-body">
+                        <div class="card-title">SKC 加站 + 下架 + 退回 + 下活动</div>
+                        <div class="card-desc">请填写本链接，工作日清，按照问卷内容填写</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=29947025651" target="_blank" rel="noopener" class="card-link link-pink">🔗 填写问卷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-pink">
+                <div class="card-content">
+                    <span class="card-num bg-pink">③</span>
+                    <div class="card-body">
+                        <div class="card-title">下手工单</div>
+                        <div class="card-desc">工作日上午11:00点下单</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=23517671500" target="_blank" rel="noopener" class="card-link link-pink">🔗 填写问卷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-pink">
+                <div class="card-content">
+                    <span class="card-num bg-pink">④</span>
+                    <div class="card-body">
+                        <div class="card-title">备货单开白</div>
+                        <div class="card-desc">可售天数小于12天，无滞销清仓标签</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=34840653590" target="_blank" rel="noopener" class="card-link link-pink">🔗 填写问卷</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-border-pink">
+                <div class="card-content">
+                    <span class="card-num bg-pink">⑤</span>
+                    <div class="card-body">
+                        <div class="card-title">店铺去印花标签</div>
+                        <div class="card-desc">下架批量印花/重复上款/虚假宣传品后填写</div>
+                        <a href="https://seller.kuajingmaihuo.com/questionnaire?surveyId=31711017952" target="_blank" rel="noopener" class="card-link link-pink">🔗 填写问卷</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===================== 对接买手 ===================== -->
+    <div class="section" id="section-buyer">
+        <div class="section-header">
+            <div class="section-icon bg-teal">👥</div>
+            <div class="section-title">对接买手</div>
+        </div>
+        <div class="buyer-grid">
+
+            <div class="buyer-card">
+                <div class="buyer-avatar bg-teal">克</div>
+                <div class="buyer-name">克劳德</div>
+                <a href="https://kelaodechen.netlify.app/" target="_blank" rel="noopener" class="buyer-link link-teal">🔗 个人主页</a>
+            </div>
+
+            <div class="buyer-card">
+                <div class="buyer-avatar bg-teal">万</div>
+                <div class="buyer-name">万仞山</div>
+                <a href="https://hazelshao.netlify.app/" target="_blank" rel="noopener" class="buyer-link link-teal">🔗 个人主页</a>
+            </div>
+
+            <div class="buyer-card">
+                <div class="buyer-avatar bg-indigo">麦</div>
+                <div class="buyer-name">麦杞岐</div>
+                <span class="buyer-no-link">暂无链接</span>
+            </div>
+
+            <div class="buyer-card">
+                <div class="buyer-avatar bg-indigo">云</div>
+                <div class="buyer-name">云岁月</div>
+                <span class="buyer-no-link">暂无链接</span>
+            </div>
+
+            <div class="buyer-card">
+                <div class="buyer-avatar bg-cyan">飒</div>
+                <div class="buyer-name">飒醒</div>
+                <span class="buyer-no-link">暂无链接</span>
+            </div>
+
+            <div class="buyer-card">
+                <div class="buyer-avatar bg-cyan">渡</div>
+                <div class="buyer-name">渡鲸澜</div>
+                <span class="buyer-no-link">暂无链接</span>
+            </div>
+
+            <div class="buyer-card">
+                <div class="buyer-avatar bg-purple">楚</div>
+                <div class="buyer-name">楚古月</div>
+                <span class="buyer-no-link">暂无链接</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>男装OBM2组全指引 · 内部使用</p>
+</div>
+
+</body>
+</html>
