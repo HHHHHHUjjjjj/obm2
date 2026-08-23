@@ -1,0 +1,744 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="男装OBM2组热点资讯">
+
+    <title>热点资讯｜男装OBM2组</title>
+
+    <style>
+
+        /* =========================
+           基础样式
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                "Helvetica Neue",
+                Arial,
+                "PingFang SC",
+                "Microsoft YaHei",
+                sans-serif;
+
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           顶部 Hero
+        ========================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #1a1a2e 0%,
+                    #16213e 50%,
+                    #0f3460 100%
+                );
+
+            padding: 55px 20px 45px;
+
+            text-align: center;
+
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        .hero-decoration {
+            width: 60px;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #e94560,
+                    #0f3460
+                );
+
+            margin: 20px auto 0;
+
+            border-radius: 2px;
+        }
+
+
+        /* =========================
+           主体容器
+        ========================= */
+
+        .container {
+            max-width: 960px;
+
+            margin: 0 auto;
+
+            padding: 30px 16px 60px;
+        }
+
+
+        /* =========================
+           返回首页
+        ========================= */
+
+        .back-home {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin-bottom: 25px;
+
+            padding: 8px 16px;
+
+            background: #fff;
+
+            border-radius: 8px;
+
+            color: #555;
+
+            text-decoration: none;
+
+            font-size: 0.85rem;
+
+            box-shadow:
+                0 2px 6px rgba(0,0,0,0.05);
+
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+
+        /* =========================
+           页面标题
+        ========================= */
+
+        .page-title {
+            margin-bottom: 22px;
+        }
+
+        .page-title h2 {
+            font-size: 1.45rem;
+
+            color: #1a1a2e;
+
+            font-weight: 700;
+        }
+
+        .page-title p {
+            margin-top: 5px;
+
+            font-size: 0.85rem;
+
+            color: #888;
+        }
+
+
+        /* =========================
+           资讯列表
+        ========================= */
+
+        .news-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 16px;
+        }
+
+
+        /* =========================
+           单条资讯卡片
+           
+           【以后新增资讯】
+           直接复制整个 article 即可
+        ========================= */
+
+        .news-card {
+            background: #fff;
+
+            border-radius: 12px;
+
+            padding: 22px 24px;
+
+            box-shadow:
+                0 2px 7px rgba(0,0,0,0.05);
+
+            border-left: 4px solid #f12711;
+
+            transition:
+                all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateX(3px);
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,0.1);
+        }
+
+
+        /* =========================
+           资讯头部
+        ========================= */
+
+        .news-header {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* 标签 */
+
+        .news-tag {
+            display: inline-block;
+
+            padding: 3px 9px;
+
+            border-radius: 5px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f12711,
+                    #f5af19
+                );
+
+            color: #fff;
+
+            font-size: 0.7rem;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* 日期 */
+
+        .news-date {
+            font-size: 0.75rem;
+
+            color: #aaa;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           资讯标题
+        ========================= */
+
+        .news-title {
+            font-size: 1.08rem;
+
+            font-weight: 700;
+
+            color: #1a1a2e;
+
+            margin-bottom: 8px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           资讯正文
+        ========================= */
+
+        .news-content {
+            font-size: 0.9rem;
+
+            color: #666;
+
+            line-height: 1.8;
+        }
+
+        .news-content p {
+            margin-bottom: 10px;
+        }
+
+        .news-content p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           重点内容
+        ========================= */
+
+        .news-content strong {
+            color: #333;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           资讯底部
+        ========================= */
+
+        .news-footer {
+            margin-top: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* 分类标签 */
+
+        .news-category {
+            display: inline-block;
+
+            padding: 3px 9px;
+
+            background: #f5f5f5;
+
+            color: #666;
+
+            border-radius: 5px;
+
+            font-size: 0.72rem;
+        }
+
+
+        /* =========================
+           分割线
+        ========================= */
+
+        .news-divider {
+            height: 1px;
+
+            background: #eee;
+
+            margin: 5px 0;
+        }
+
+
+        /* =========================
+           页脚
+        ========================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #999;
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =========================
+           移动端
+        ========================= */
+
+        @media (max-width: 640px) {
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding-top: 20px;
+            }
+
+            .news-card {
+                padding: 18px 18px;
+            }
+
+            .news-header {
+                align-items: flex-start;
+            }
+
+            .news-title {
+                font-size: 1rem;
+            }
+
+            .news-content {
+                font-size: 0.85rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     顶部
+===================================================== -->
+
+<div class="hero">
+
+    <h1>热点资讯</h1>
+
+    <p>
+        男装市场 · 平台动态 · 爆款趋势 · 招商机会
+    </p>
+
+    <div class="hero-decoration"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     主体
+===================================================== -->
+
+<div class="container">
+
+
+    <!-- 返回首页 -->
+
+    <a href="index.html" class="back-home">
+        ← 返回男装OBM2组全指引
+    </a>
+
+
+
+    <!-- 页面标题 -->
+
+    <div class="page-title">
+
+        <h2>
+            🔥 最新热点资讯
+        </h2>
+
+        <p>
+            持续更新男装市场及平台重点资讯
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         资讯列表
+
+         新增资讯：
+         直接复制下面的 article.news-card
+         放到其他 article 前面即可
+
+    ================================================== -->
+
+    <div class="news-list">
+
+<article class="news-card">
+
+    <div class="news-header">
+
+        <span class="news-tag">
+            HOT
+        </span>
+
+        <span class="news-date">
+            2026-08-23
+        </span>
+
+    </div>
+
+    <div class="news-title">
+        男装热搜词周榜（W34）：完整搜索词排名与趋势数据
+    </div>
+
+    <div class="news-content">
+
+        <p>
+            ⭐类目倾向：本周出现明显转秋冬装倾向，T恤/短款等夏季类目热度缓缓降低，男士夹克、卫衣连帽衫、冬季服装等搜索词热度上升明显。冬季服装"winter clothes for men"排名上升68位、搜索量环比飙升106.84%；"男士卫衣"排名跃升72位、搜索量环比增长108.67%；"mens hoodies"排名上升51位、搜索量环比增长61.60%；"jackets for men"排名上升8位、搜索量环比增长4.54%。夏季类目方面，"mens shorts"搜索量环比-9.08%，"shorts"搜索量环比-14.76%，"mens t shirts clearance sale"排名下降18位、搜索量环比-24.44%，"男士T恤"排名暴跌63位、搜索量环比-56.63%。
+        </p>
+
+        <p>
+            ⭐节庆趋势：<br>
+            -- Halloween（万圣节）：依旧是本周第二大热搜词，搜索量环比增长27.45%。已跑出5个万圣节相关词，分别为halloween（排名2，搜索量环比+27.45%）/halloween costumes（排名14，排名变化+21，搜索量环比+81.88%）/halloween costumes for men（排名32，排名变化+28，搜索量环比+84.93%）/halloween stuff clearance（排名63，排名变化+11，搜索量环比+34.61%）/halloween costume（排名144，排名变化+14，搜索量环比+7.40%），且趋势依旧强劲。<br>
+            -- Christmas（圣诞节）："圣诞夜惊魂（nightmares before christmas stuff）"IP搜索暴增，排名跃升141位，搜索量环比飙升321.69%；圣诞清仓（christmas stuff clearance cheap）排名跃升140位，搜索量环比暴增225.09%；"christmas"排名上升16位，搜索量环比增长44.95%。<br>
+            -- 开学季（8-9月）：teacher shirts（教师T恤），排名93，搜索量环比-9.34%。
+        </p>
+
+        <p>
+            ⭐运动趋势：高尔夫（排名9，排名变化+4，搜索量环比+21.85%）、狩猎（"hunting"排名28，排名变化+8，搜索量环比+18.87%；"hunting gear and equipment"排名39，排名变化+1，搜索量环比+18.00%；"hunting clothes for men"排名149，排名变化+4，搜索量环比+2.66%）、足球（"football accessories"排名21，搜索量环比+7.19%；"football"排名65，排名变化+5，搜索量环比+3.96%；"football gear"排名80，排名变化+24，搜索量环比+53.77%）、露营（"camping"排名78，排名变化+17，搜索量环比+31.11%）、健身（"gym"排名85，排名变化+3，搜索量环比+12.75%；"gym clothes men"排名92，排名变化+6，搜索量环比+11.38%）、钓鱼（"fishing"排名71，排名变化-19，搜索量环比-31.74%，需求开始下滑，夏季钓鱼季结束）。
+        </p>
+
+        <p>
+            ⭐本周热度上升明显的风格/元素：战术/工装风（"tactical pants for men"排名99，排名变化+13，搜索量环比+14.30%；"cargo pants"排名146，排名变化+8，搜索量环比+5.12%；"work pants for men"排名48，排名变化+1）、压缩紧身穿搭（"compression socks for men"排名102；"compression socks"排名134）、搞笑/趣味印花（"funny shirts"排名96，排名变化+29，搜索量环比+42.29%；"funny tshirts"排名49）、baggy风（"baggy jeans"排名91；"baggy jeans men"排名145）、设计师/潮流款（"designer clothes men"排名133，排名变化+50，搜索量环比+53.73%）。其他明显上升词还包括："men clothes for men"排名20，排名变化+44，搜索量环比+149.65%；"clearance items"排名95，排名变化+41，搜索量环比+66.60%；"fall"排名119，排名变化+29，搜索量环比+41.89%；"custom t shirt"排名84，排名变化+12，搜索量环比+26.86%；"grip socks"排名121，排名变化+21，搜索量环比+28.71%；"卫衣"排名148，排名变化+23，搜索量环比+17.08%；"costumes"排名129，排名变化+15，搜索量环比+12.73%；"hello kitty"排名76，排名变化+18，搜索量环比+44.98%。
+        </p>
+
+        <p>
+            📊 完整搜索词排行榜（W34）：<br>
+            排名1：mens clothes（男士服装）| 排名变化 0 | 搜索量环比 -0.83%<br>
+            排名2：halloween（万圣节）| 排名变化 0 | 搜索量环比 +27.45%<br>
+            排名3：mens clothing clearance sale（男士服装清仓特卖）| 排名变化 0 | 搜索量环比 -12.99%<br>
+            排名4：mens shorts（男士短裤）| 排名变化 0 | 搜索量环比 -9.08%<br>
+            排名5：shirts（衬衫）| 排名变化 0 | 搜索量环比 -11.76%<br>
+            排名6：clothes（衣服）| 排名变化 +1 | 搜索量环比 -8.78%<br>
+            排名7：shorts（短裤）| 排名变化 -1 | 搜索量环比 -14.76%<br>
+            排名8：dirty gifts（恶搞礼物）| 排名变化 0 | 搜索量环比 +5.71%<br>
+            排名9：golf（高尔夫）| 排名变化 +4 | 搜索量环比 +21.85%<br>
+            排名10：shirts for men（男士衬衫）| 排名变化 0 | 搜索量环比 -7.22%<br>
+            排名11：pants（裤子）| 排名变化 0 | 搜索量环比 -6.60%<br>
+            排名12：shorts for men（男士短裤）| 排名变化 -3 | 搜索量环比 -14.32%<br>
+            排名13：ropa de hombre（男装-西班牙语）| 排名变化 -1 | 搜索量环比 +0.61%<br>
+            排名14：halloween costumes（万圣节服装）| 排名变化 +21 | 搜索量环比 +81.88%<br>
+            排名15：pants for men（男士裤子）| 排名变化 0 | 搜索量环比 -0.81%<br>
+            排名16：men shirts（男式衬衫）| 排名变化 -2 | 搜索量环比 -7.99%<br>
+            排名17：pantalones para hombres（男士长裤-西班牙语）| 排名变化 0 | 搜索量环比 +0.28%<br>
+            排名18：mens t恤（男士T恤）| 排名变化 -2 | 搜索量环比 -11.87%<br>
+            排名19：socks（袜子）| 排名变化 -1 | 搜索量环比 -6.64%<br>
+            排名20：men clothes for men（男装）| 排名变化 +44 | 搜索量环比 +149.65%<br>
+            排名21：football accessories（足球配件）| 排名变化 +2 | 搜索量环比 +7.19%<br>
+            排名22：mens pants（男士长裤）| 排名变化 +4 | 搜索量环比 +13.74%<br>
+            排名24：local warehouse（本地仓库）| 排名变化 -4 | 搜索量环比 -6.48%<br>
+            排名25：t shirts for men（男士T恤）| 排名变化 0 | 搜索量环比 +1.76%<br>
+            排名26：mens shirts（男士衬衫）| 排名变化 -4 | 搜索量环比 -6.67%<br>
+            排名27：shirt（衬衫）| 排名变化 -3 | 搜索量环比 -4.75%<br>
+            排名28：hunting（打猎）| 排名变化 +8 | 搜索量环比 +18.87%<br>
+            排名29：camisas de hombre（男式衬衫-西班牙语）| 排名变化 -2 | 搜索量环比 -4.05%<br>
+            排名30：mens t shirts（男士T恤）| 排名变化 -9 | 搜索量环比 -12.47%<br>
+            排名31：graphic tees（印花T恤）| 排名变化 -12 | 搜索量环比 -17.54%<br>
+            排名32：halloween costumes for men（男士万圣节服装）| 排名变化 +28 | 搜索量环比 +84.93%<br>
+            排名33：hoodies for men（男士连帽衫）| 排名变化 0 | 搜索量环比 +6.49%<br>
+            排名34：men（男装）| 排名变化 +5 | 搜索量环比 +30.32%<br>
+            排名35：men shorts（男士短裤）| 排名变化 -7 | 搜索量环比 -4.73%<br>
+            排名36：hoodies（连帽衫）| 排名变化 -6 | 搜索量环比 -8.12%<br>
+            排名37：mens 2 piece outfits（男士两件套）| 排名变化 -3 | 搜索量环比 -4.40%<br>
+            排名38：men's clothes clearance sale 90 percent（男装清仓特卖九折）| 排名变化 -7 | 搜索量环比 -11.13%<br>
+            排名39：hunting gear and equipment（打猎装备）| 排名变化 +1 | 搜索量环比 +18.00%<br>
+            排名40：baddie clothes（辣妹装）| 排名变化 -8 | 搜索量环比 -16.36%<br>
+            排名42：clothes for men（男装）| 排名变化 -13 | 搜索量环比 -21.63%<br>
+            排名43：golf stuff clearance（高尔夫清仓）| 排名变化 0 | 搜索量环比 +7.81%<br>
+            排名44：sweatpants men（男士运动裤）| 排名变化 -6 | 搜索量环比 -5.69%<br>
+            排名45：hoodie（连帽衫）| 排名变化 -1 | 搜索量环比 +4.42%<br>
+            排名46：free shipping（包邮）| 排名变化 -4 | 搜索量环比 -2.40%<br>
+            排名48：work pants for men（男士工装裤）| 排名变化 +1 | 搜索量环比 -4.30%<br>
+            排名49：funny tshirts（搞笑T恤）| 排名变化 -4 | 搜索量环比 -6.66%<br>
+            排名50：sweatpants（运动裤）| 排名变化 -9 | 搜索量环比 -13.28%<br>
+            排名51：jackets for men（男士夹克）| 排名变化 +8 | 搜索量环比 +4.54%<br>
+            排名52：t shirts（T恤）| 排名变化 -5 | 搜索量环比 -13.10%<br>
+            排名53：jorts（牛仔短裤）| 排名变化 +2 | 搜索量环比 -0.18%<br>
+            排名54：jeans（牛仔裤）| 排名变化 -6 | 搜索量环比 -13.74%<br>
+            排名55：mens underwear（男士内裤）| 排名变化 +2 | 搜索量环比 -0.57%<br>
+            排名56：pantalones de trabajo para hombre（男士工装裤-西班牙语）| 排名变化 -10 | 搜索量环比 -14.97%<br>
+            排名57：christmas（圣诞节）| 排名变化 +16 | 搜索量环比 +44.95%<br>
+            排名58：men clothes（男装）| 排名变化 +4 | 搜索量环比 +8.04%<br>
+            排名59：compression shirt men（男士压缩衣）| 排名变化 -3 | 搜索量环比 -3.91%<br>
+            排名60：socks for men（男士袜子）| 排名变化 -9 | 搜索量环比 -8.70%<br>
+            排名61：jacket（夹克）| 排名变化 +5 | 搜索量环比 +7.08%<br>
+            排名62：big and tall men clothing（大码高个男装）| 排名变化 -8 | 搜索量环比 -9.72%<br>
+            排名63：halloween stuff clearance（万圣节清仓）| 排名变化 +11 | 搜索量环比 +34.61%<br>
+            排名64：local warehouse items for men（本地仓库男装）| 排名变化 -6 | 搜索量环比 -16.70%<br>
+            排名65：football（足球）| 排名变化 +5 | 搜索量环比 +3.96%<br>
+            排名66：cargo pants men（男士工装裤）| 排名变化 -5 | 搜索量环比 -9.62%<br>
+            排名67：men pants（男士裤子）| 排名变化 -14 | 搜索量环比 -22.36%<br>
+            排名68：mens t shirts clearance sale（男士T恤清仓特卖）| 排名变化 -18 | 搜索量环比 -24.44%<br>
+            排名70：jeans for men（男士牛仔裤）| 排名变化 +1 | 搜索量环比 +4.31%<br>
+            排名71：fishing（钓鱼）| 排名变化 -19 | 搜索量环比 -31.74%<br>
+            排名72：graphic tees men（男士印花T恤）| 排名变化 -7 | 搜索量环比 -20.82%<br>
+            排名73：polo shirts for men（男士Polo衫）| 排名变化 -5 | 搜索量环比 -13.73%<br>
+            排名74：mens shirt（男士衬衫）| 排名变化 +5 | 搜索量环比 +12.53%<br>
+            排名75：anime（动漫）| 排名变化 -3 | 搜索量环比 -14.73%<br>
+            排名76：hello kitty（Hello Kitty）| 排名变化 +18 | 搜索量环比 +44.98%<br>
+            排名77：underwear for men（男士内裤）| 排名变化 -1 | 搜索量环比 -6.79%<br>
+            排名78：camping（露营）| 排名变化 +17 | 搜索量环比 +31.11%<br>
+            排名79：clearance（清仓）| 排名变化 +3 | 搜索量环比 +10.46%<br>
+            排名80：football gear（足球装备）| 排名变化 +24 | 搜索量环比 +53.77%<br>
+            排名83：mens jeans（男士牛仔裤）| 排名变化 -3 | 搜索量环比 -5.33%<br>
+            排名84：custom t shirt（定制T恤）| 排名变化 +12 | 搜索量环比 +26.86%<br>
+            排名85：gym（健身房）| 排名变化 +3 | 搜索量环比 +12.75%<br>
+            排名87：t恤（T恤）| 排名变化 +3 | 搜索量环比 +5.04%<br>
+            排名89：long sleeve shirts for men（男士长袖衬衫）| 排名变化 0 | 搜索量环比 -3.52%<br>
+            排名90：gay men underwear（同性恋男士内裤）| 排名变化 -4 | 搜索量环比 -4.94%<br>
+            排名91：baggy jeans（宽松牛仔裤）| 排名变化 -8 | 搜索量环比 -10.26%<br>
+            排名92：gym clothes men（男士健身服）| 排名变化 +6 | 搜索量环比 +11.38%<br>
+            排名93：teacher shirts（教师衬衫）| 排名变化 -9 | 搜索量环比 -9.34%<br>
+            排名94：jackets（夹克）| 排名变化 +7 | 搜索量环比 +10.55%<br>
+            排名95：clearance items（清仓商品）| 排名变化 +41 | 搜索量环比 +66.60%<br>
+            排名96：funny shirts（搞笑衬衫）| 排名变化 +29 | 搜索量环比 +42.29%<br>
+            排名97：sissy accessories（娘娘腔配件）| 排名变化 +5 | 搜索量环比 +5.09%<br>
+            排名98：nightmares before christmas stuff（圣诞夜惊魂周边）| 排名变化 +141 | 搜索量环比 +321.69%<br>
+            排名99：tactical pants for men（男士战术裤）| 排名变化 +13 | 搜索量环比 +14.30%<br>
+            排名100：mens（男士）| 排名变化 -19 | 搜索量环比 -29.98%<br>
+            排名101：mens shorts clearance sale（男士短裤清仓特卖）| 排名变化 +17 | 搜索量环比 +16.96%<br>
+            排名102：compression socks for men（男士压缩袜）| 排名变化 -17 | 搜索量环比 -22.63%<br>
+            排名103：short de hombre（男士短裤-西班牙语）| 排名变化 -12 | 搜索量环比 -21.13%<br>
+            排名104：mens socks（男士袜子）| 排名变化 -7 | 搜索量环比 -11.24%<br>
+            排名105：winter clothes for men（男士冬季服装）| 排名变化 +68 | 搜索量环比 +106.84%<br>
+            排名106：mens plus size big and tall（大码男装）| 排名变化 +4 | 搜索量环比 +2.47%<br>
+            排名107：男士卫衣（男士卫衣）| 排名变化 +72 | 搜索量环比 +108.67%<br>
+            排名109：panties for men（男士内裤）| 排名变化 -1 | 搜索量环比 -8.15%<br>
+            排名110：conjunto para hombre（男士套装-西班牙语）| 排名变化 +12 | 搜索量环比 +3.25%<br>
+            排名111：mens hoodies（男士连帽衫）| 排名变化 +51 | 搜索量环比 +61.60%<br>
+            排名113：gay men clothes（同性恋男装）| 排名变化 -35 | 搜索量环比 -51.47%<br>
+            排名114：boxers（平角内裤）| 排名变化 +2 | 搜索量环比 -4.49%<br>
+            排名115：spiderman costume（蜘蛛侠服装）| 排名变化 +8 | 搜索量环比 +1.59%<br>
+            排名117：men jeans（男士牛仔裤）| 排名变化 +7 | 搜索量环比 +3.05%<br>
+            排名118：boxers for men（男士平角内裤）| 排名变化 -7 | 搜索量环比 -9.98%<br>
+            排名119：fall（秋季）| 排名变化 +29 | 搜索量环比 +41.89%<br>
+            排名121：grip socks（防滑袜）| 排名变化 +21 | 搜索量环比 +28.71%<br>
+            排名122：soccer（足球）| 排名变化 -2 | 搜索量环比 -7.09%<br>
+            排名123：men's shorts（男士短裤）| 排名变化 -24 | 搜索量环比 -28.80%<br>
+            排名124：camisas para trabajar en el sol（防晒工作衬衫-西班牙语）| 排名变化 -21 | 搜索量环比 -25.53%<br>
+            排名126：men underwear（男士内裤）| 排名变化 +6 | 搜索量环比 +0.57%<br>
+            排名127：cargo shorts men（男士工装短裤）| 排名变化 -1 | 搜索量环比 -8.45%<br>
+            排名128：role play outfits men（角色扮演套装男）| 排名变化 -15 | 搜索量环比 -20.51%<br>
+            排名129：costumes（服装）| 排名变化 +15 | 搜索量环比 +12.73%<br>
+            排名130：role play outfits（角色扮演套装）| 排名变化 0 | 搜索量环比 -6.68%<br>
+            排名131：boxer para hombre（男士平角内裤-西班牙语）| 排名变化 +3 | 搜索量环比 -2.78%<br>
+            排名132：underwear（内裤）| 排名变化 -27 | 搜索量环比 -31.97%<br>
+            排名133：designer clothes men（设计师男装）| 排名变化 +50 | 搜索量环比 +53.73%<br>
+            排名134：compression socks（压缩袜）| 排名变化 -6 | 搜索量环比 -13.19%<br>
+            排名135：t shirt（T恤）| 排名变化 +5 | 搜索量环比 +3.08%<br>
+            排名136：mens shirts clearance sale（男士衬衫清仓特卖）| 排名变化 -30 | 搜索量环比 -32.65%<br>
+            排名137：suits for men（男士西装）| 排名变化 +4 | 搜索量环比 -2.16%<br>
+            排名138：男士短袖（男士短袖）| 排名变化 -31 | 搜索量环比 -35.23%<br>
+            排名139：sweaters（毛衣）| 排名变化 +4 | 搜索量环比 -3.00%<br>
+            排名140：outfits for men（男士穿搭）| 排名变化 -31 | 搜索量环比 -36.29%<br>
+            排名141：christmas stuff clearance cheap（圣诞清仓廉价商品）| 排名变化 +140 | 搜索量环比 +225.09%<br>
+            排名142：men socks（男士袜子）| 排名变化 -7 | 搜索量环比 -13.03%<br>
+            排名143：pantalones（长裤-西班牙语）| 排名变化 +6 | 搜索量环比 +3.00%<br>
+            排名144：halloween costume（万圣节服装）| 排名变化 +14 | 搜索量环比 +7.40%<br>
+            排名145：baggy jeans men（男士宽松牛仔裤）| 排名变化 -8 | 搜索量环比 -12.79%<br>
+            排名146：cargo pants（工装裤）| 排名变化 +8 | 搜索量环比 +5.12%<br>
+            排名147：mens tshirts（男士T恤）| 排名变化 -2 | 搜索量环比 -6.95%<br>
+            排名148：卫衣（卫衣）| 排名变化 +23 | 搜索量环比 +17.08%<br>
+            排名149：hunting clothes for men（男士打猎服）| 排名变化 +4 | 搜索量环比 +2.66%<br>
+            排名150：男士T恤（男士T恤）| 排名变化 -63 | 搜索量环比 -56.63%
+        </p>
+
+    </div>
+
+    <div class="news-footer">
+
+        <span class="news-category">
+            市场趋势
+        </span>
+
+    </div>
+
+</article>
+           <article class="news-card">
+
+    <div class="news-header">
+
+        <span class="news-tag">
+            HOT
+        </span>
+
+        <span class="news-date">
+            2026-08-23
+        </span>
+
+    </div>
+
+    <div class="news-title">
+        含PU服装成分填写规范：2周内尽快完成老品修改，否则无法入库
+    </div>
+
+    <div class="news-content">
+
+        <p>
+            含pu的服装在6月更换了材料+成分的填写方式，但很多老品没有按照要求修改，导致老品导出的洗水唛是错误的，无法入库。今天会统一进行类目维度的成分修改开白，请2周内尽快修改。
+        </p>
+
+        <p>
+            情况一：如果布料是双面完全由pu材质涂覆/浸渍/层压等，看不见里面底布，按pu类去填属性：<br>
+            材质：涂层成分<br>
+            成分：基布成分<br>
+            织造方式：填写 非纺织材料（PVC/真皮革/真皮草等）
+        </p>
+
+        <p>
+            情况二：如果布料仅是外层由pu材质涂覆/浸渍/层压等，内层还是可以看出织物的，按织物类去填写属性：<br>
+            材质：涂层成分<br>
+            成分：基布成分<br>
+            织造方式：填写 基底布材质的织造方式，比如针织、梭织【不要填写非纺织材料(PVC/真皮革/真皮草等)】
+        </p>
+
+    </div>
+
+    <div class="news-footer">
+
+        <span class="news-category">
+            商品维护
+        </span>
+
+    </div>
+
+</article>
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     页脚
+===================================================== -->
+
+<div class="footer">
+
+    <p>
+        男装OBM2组全指引 · 内部使用
+    </p>
+
+</div>
+
+
+</body>
+
+</html>
+```
