@@ -1,99 +1,584 @@
-/* ===================== 热点资讯 ===================== */
+/* =========================
+   基础样式
+========================= */
 
-.news-preview {
-    background: #fff;
-    border-radius: 14px;
-    padding: 20px 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-left: 4px solid #f12711;
-    display: flex;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+
+    background: #f0f2f5;
+    color: #333;
+    line-height: 1.7;
+
+    /* 防止页面出现横向滚动 */
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   顶部 Hero
+========================= */
+
+.hero {
+    background:
+        linear-gradient(
+            135deg,
+            #1a1a2e 0%,
+            #16213e 50%,
+            #0f3460 100%
+        );
+
+    padding: 55px 20px 45px;
+
+    text-align: center;
+
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.hero-decoration {
+    width: 60px;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e94560,
+            #0f3460
+        );
+
+    margin: 20px auto 0;
+
+    border-radius: 2px;
+}
+
+
+/* =========================
+   主体容器
+========================= */
+
+.container {
+    max-width: 960px;
+
+    margin: 0 auto;
+
+    padding: 30px 16px 60px;
+
+    /* 防止内部内容撑破 */
+    width: 100%;
+}
+
+
+/* =========================
+   返回首页
+========================= */
+
+.back-home {
+    display: inline-flex;
+
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+
+    gap: 6px;
+
+    margin-bottom: 25px;
+
+    padding: 8px 16px;
+
+    background: #fff;
+
+    border-radius: 8px;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,0.05);
+
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
-.news-preview:hover {
-    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
+.back-home:hover {
+    background: #1a1a2e;
+    color: #fff;
 }
 
-.news-preview-content {
-    flex: 1;
+
+/* =========================
+   页面标题
+========================= */
+
+.page-title {
+    margin-bottom: 22px;
+}
+
+.page-title h2 {
+    font-size: 1.45rem;
+
+    color: #1a1a2e;
+
+    font-weight: 700;
+}
+
+.page-title p {
+    margin-top: 5px;
+
+    font-size: 0.85rem;
+
+    color: #888;
+}
+
+
+/* =========================
+   资讯列表
+========================= */
+
+.news-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   单条资讯卡片
+========================= */
+
+.news-card {
+    background: #fff;
+
+    border-radius: 12px;
+
+    padding: 22px 24px;
+
+    box-shadow:
+        0 2px 7px rgba(0,0,0,0.05);
+
+    border-left: 4px solid #f12711;
+
+    transition:
+        all 0.3s ease;
+
+    /* 防止卡片内部内容撑破 */
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.news-card:hover {
+    transform: translateX(3px);
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.1);
+}
+
+
+/* =========================
+   资讯头部
+========================= */
+
+.news-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 10px;
+
     min-width: 0;
 }
 
+
+/* =========================
+   资讯标签
+========================= */
+
 .news-tag {
     display: inline-block;
-    background: linear-gradient(135deg, #f12711, #f5af19);
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 3px 8px;
+
+    padding: 3px 9px;
+
     border-radius: 5px;
-    margin-bottom: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f12711,
+            #f5af19
+        );
+
+    color: #fff;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
 }
+
+
+/* =========================
+   日期
+========================= */
+
+.news-date {
+    font-size: 0.75rem;
+
+    color: #aaa;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   资讯标题
+========================= */
 
 .news-title {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
+
     font-weight: 700;
+
     color: #1a1a2e;
-    margin-bottom: 5px;
+
+    margin-bottom: 8px;
+
+    line-height: 1.5;
+
+    /* 防止超长英文单词撑破 */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-.news-desc {
-    font-size: 0.85rem;
-    color: #888;
-    line-height: 1.6;
+
+/* =========================
+   资讯正文
+========================= */
+
+.news-content {
+    font-size: 0.9rem;
+
+    color: #666;
+
+    line-height: 1.8;
+
+    /* 核心：正文区域不能超过卡片 */
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    /* 防止超长文字、链接等撑破页面 */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-.news-meta {
-    display: flex;
-    gap: 16px;
-    margin-top: 8px;
-    font-size: 0.75rem;
-    color: #999;
+.news-content p {
+    margin-bottom: 10px;
+
+    max-width: 100%;
 }
 
-.news-more {
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 9px 18px;
+.news-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   重点内容
+========================= */
+
+.news-content strong {
+    color: #333;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   资讯图片
+========================= */
+
+/*
+   使用方法：
+
+   <div class="news-image">
+       <img
+           src="图片地址"
+           alt="图片说明"
+       >
+   </div>
+
+   图片会自动适配新闻正文宽度。
+*/
+
+.news-image {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 12px 0;
+
+    text-align: left;
+
+    /* 防止图片容器撑破 */
+    overflow: hidden;
+}
+
+.news-image img {
+    display: block;
+
+    /*
+       核心设置：
+       图片最大不能超过正文宽度
+    */
+    max-width: 100%;
+
+    /*
+       保持图片原始尺寸比例
+       不强制拉伸
+    */
+    width: auto;
+    height: auto;
+
+    /*
+       防止特别长的图片占满整个屏幕高度
+    */
+    max-height: 500px;
+
+    /*
+       保持比例
+    */
+    object-fit: contain;
+
     border-radius: 8px;
-    background: #fff5f0;
-    color: #f12711;
-    text-decoration: none;
+
+    border: 1px solid #eee;
+
+    /*
+       防止图片产生额外间距
+    */
+    margin: 0;
+
+    /*
+       图片即使特别大，也不能撑破容器
+    */
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   防止新闻正文中的其他图片撑破
+========================= */
+
+.news-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   防止长链接撑破页面
+========================= */
+
+.news-content a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* =========================
+   资讯底部
+========================= */
+
+.news-footer {
+    margin-top: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   分类标签
+========================= */
+
+.news-category {
+    display: inline-block;
+
+    padding: 3px 9px;
+
+    background: #f5f5f5;
+
+    color: #666;
+
+    border-radius: 5px;
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================
+   分割线
+========================= */
+
+.news-divider {
+    height: 1px;
+
+    background: #eee;
+
+    margin: 5px 0;
+}
+
+
+/* =========================
+   页脚
+========================= */
+
+.footer {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    color: #999;
+
     font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
 }
 
-.news-more:hover {
-    background: #f12711;
-    color: #fff;
-}
 
-/* 移动端 */
+/* =========================
+   移动端
+========================= */
+
 @media (max-width: 640px) {
-    .news-preview {
-        padding: 16px 18px;
+
+    .hero {
+        padding: 40px 16px 35px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .container {
+        padding:
+            20px
+            12px
+            40px;
+    }
+
+    .news-card {
+        padding: 18px 18px;
+
+        /*
+           手机端也确保不会撑破
+        */
+        width: 100%;
+    }
+
+    .news-header {
         align-items: flex-start;
     }
 
-    .news-more {
-        padding: 8px 12px;
-        font-size: 0.78rem;
+    .news-title {
+        font-size: 1rem;
     }
 
-    .news-desc {
-        font-size: 0.8rem;
+    .news-content {
+        font-size: 0.85rem;
     }
 
-    .news-meta {
-        gap: 8px;
-        flex-wrap: wrap;
+    /*
+       手机端图片
+    */
+    .news-image {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 10px 0;
     }
+
+    .news-image img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+
+        max-height: 400px;
+    }
+
+}
+
+
+/* =========================
+   超小屏幕
+========================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .news-card {
+        padding: 16px 14px;
+    }
+
+    .news-title {
+        font-size: 0.95rem;
+    }
+
+    .news-content {
+        font-size: 0.82rem;
+    }
+
+    .news-image img {
+        max-width: 100%;
+        max-height: 350px;
+    }
+
 }
